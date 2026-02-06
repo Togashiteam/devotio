@@ -191,7 +191,7 @@ As a visitor, I want an About Us page with mocked mission and team content so I 
 
 ### Measurable Outcomes
 
-- **SC-001**: 90% of test users can reach any page from Home in $\le 2$ taps within 10 seconds.
+- **SC-001**: 90% of test users can reach any page from Home in ≤ 2 taps within 10 seconds.
 - **SC-002**: 90% of test users can locate the Bible Reading page and switch passages in under 30 seconds.
 - **SC-003**: The app renders all five pages correctly on screens 360px wide without horizontal scrolling.
 - **SC-004**: 90% of test users rate the design as “sleek and standout” on a post-test survey.
