@@ -31,8 +31,10 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
-
+- Ensure compliance with core principles: Mobile-First, Reactive UI, Native-Like UX, Performance Budget, Accessibility Baseline, Visual Excellence.
+- Ensure reading and prayer detail views support a distraction-free/focus
+  mode: minimal chrome by default and contextual actions that appear only on
+  explicit selection. This MUST be validated in the plan's acceptance checks.
 ## Project Structure
 
 ### Documentation (this feature)

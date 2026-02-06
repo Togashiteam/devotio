@@ -1,20 +1,16 @@
 <!-- Sync Impact Report
-Version: 1.0.0 → 1.1.0
+Version: 1.1.0 → 1.2.0
 Modified Principles:
-- I. Mobile-First by Default (clarified requirements)
-- II. Reactive UI (clarified requirements)
-- III. Native-Like UX (clarified requirements)
-- IV. Performance Budget (clarified requirements)
-- V. Accessibility Baseline (clarified requirements)
-Added Sections:
-- VI. Visual Excellence
+- VI. Visual Excellence (expanded to include reading focus requirements)
+Added Principles:
+- VII. Distraction-Free Reading
 Removed Sections: None
 Templates requiring updates:
 - .specify/templates/plan-template.md ✅
-- .specify/templates/spec-template.md ✅
-- .specify/templates/tasks-template.md ✅
+- .specify/templates/spec-template.md ⚠ pending
+- .specify/templates/tasks-template.md ⚠ pending
 Deferred TODOs:
-- TODO(MISSING_PAGE): user request truncated after "should have a"
+- None
 -->
 
 # Devotio Constitution
@@ -39,9 +35,9 @@ app-like responsiveness builds trust and keeps the experience frictionless.
 
 ### IV. Performance Budget
 The app MUST meet a lightweight performance budget: fast first load, smooth
-interactions, and minimal main-thread blocking work. Targets MUST include
-$\text{LCP} \le 2.5\,\text{s}$ on mobile-class devices and $\text{INP} \le 200\,\text{ms}$
-for primary interactions. Rationale: performance is a core UX feature.
+interactions, and minimal main-thread blocking work. Targets SHOULD include
+LCP ≤ 2.5s on mobile-class devices and INP ≤ 200ms for primary interactions.
+Rationale: performance is a core UX feature.
 
 ### V. Accessibility Baseline
 The app MUST meet WCAG 2.1 AA for contrast, focus visibility, semantic
@@ -54,21 +50,29 @@ motion) that feels sleek and distinctive without sacrificing clarity. Visual
 polish MUST be validated against real content on mobile screens. Rationale:
 the product must stand out while remaining readable and calm.
 
+### VII. Distraction-Free Reading
+Reading and prayer detail views MUST prioritize clarity: by default they MUST
+display only the content text and a concise reference/address. Supplementary
+UI chrome (navigation, metadata, persistent action bars) MUST be hidden or
+minimized while in focus mode. Contextual actions (share, comment, add-to-
+prayer/collection) MUST appear only when the user explicitly selects text or
+items. Rationale: focused reading requires minimal visual noise to support
+contemplation and comprehension.
+
 ## Minimum Technical Requirements
 
 - Responsive layout with mobile-first breakpoints.
 - Reactive state management with predictable updates.
-- Primary navigation MUST include Home, Bible Reading, Prayer, Community, and
-	TODO(MISSING_PAGE): user request truncated after "should have a".
 - PWA-ready: installable, offline shell, and caching strategy.
 - Secure by default: HTTPS-only, no secrets in client.
+- Reading/detail screens MUST support a focus/minimal mode and a contextual
+  action mechanism triggered by explicit selection gestures.
 
 ## Development Workflow
 
 - PRs require review and basic lint + test pass.
 - Feature work includes at least one UI test or acceptance check.
-- Performance and accessibility checks run before release.
-- Visual review against the design system is required before release.
+- Performance, accessibility, and visual-focus checks run before release.
 
 ## Governance
 This constitution supersedes all other practices.
@@ -81,4 +85,4 @@ principles/sections, PATCH for clarifications and non-semantic edits.
 Compliance review is REQUIRED for each feature spec and before release to
 verify adherence to core principles and minimum technical requirements.
 
-**Version**: 1.1.0 | **Ratified**: 2026-02-03 | **Last Amended**: 2026-02-03
+**Version**: 1.2.0 | **Ratified**: 2026-02-03 | **Last Amended**: 2026-02-03
