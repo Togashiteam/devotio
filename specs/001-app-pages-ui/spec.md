@@ -199,7 +199,7 @@ As a visitor, I want an About Us page with mocked mission and team content so I 
 ## Assumptions
 
 - All content is mocked and provided within the app experience.
-- No user authentication, user-generated content, or data persistence is required.
+- No user authentication or backend data persistence is required. Any user-generated content (e.g., prayers, comments, selections) may exist only as mocked, non-persisted, session-scoped state within the app.
 - The app targets modern mobile browsers and scales up for larger screens.
 
 ## Dependencies
