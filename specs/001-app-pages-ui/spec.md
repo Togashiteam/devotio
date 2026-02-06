@@ -149,9 +149,9 @@ As a visitor, I want an About Us page with mocked mission and team content so I 
   Fill them out with the right edge cases.
 -->
 
-- What happens when mocked content lists are empty?
-- How does the UI behave on very small screens or when text is long?
-- What happens if the user navigates rapidly between pages?
+- **Empty mocked content**: When any mocked content list (e.g., community posts, prayers, reading plans) is empty, the corresponding page MUST render a clear empty-state message (for example, “No items to show yet”) and MUST NOT show an error state, broken layout, or loading spinner.
+- **Very small screens and long text**: On narrow mobile screens and for unusually long titles or body text, all text MUST wrap within the viewport and remain fully readable via vertical scrolling; horizontal scrolling for core content MUST NOT be required, and text MUST NOT be clipped or overlap other UI elements.
+- **Rapid navigation between pages**: If the user taps navigation controls rapidly to switch between pages, the app MUST remain responsive, MUST render only the final selected page’s content (no mixed content from previous pages), and MUST NOT crash, freeze, or display obvious visual corruption (e.g., duplicated headers or overlapping sections).
 
 ## Requirements *(mandatory)*
 
