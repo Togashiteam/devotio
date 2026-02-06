@@ -66,7 +66,7 @@ contemplation and comprehension.
 - PWA-ready: installable, offline shell, and caching strategy.
 - Secure by default: HTTPS-only, no secrets in client.
 - Reading/detail screens MUST support a focus/minimal mode and a contextual
-	action mechanism triggered by explicit selection gestures.
+  action mechanism triggered by explicit selection gestures.
 
 ## Development Workflow
 
