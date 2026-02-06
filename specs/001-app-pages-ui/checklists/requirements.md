@@ -22,6 +22,9 @@
 - [x] Scope is clearly bounded
 - [x] Dependencies and assumptions identified
 
+Notes:
+- Edge cases updated in the main spec (wrap/empty-state/rapid navigation). These are now considered identified for Spec Kit purposes. Ensure mock fixtures include long titles and empty feeds when running tests.
+
 ## Feature Readiness
 
 - [x] All functional requirements have clear acceptance criteria

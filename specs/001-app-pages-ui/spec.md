@@ -5,6 +5,24 @@
 **Status**: Draft  
 **Input**: User description: "I am building a modern mobile first web app, I want it to look sleek, something that would stand out. Should have a home page, should have a bible reading page, should have a prayer page, should have a community page, should have a ABOUT US PAGE. no need to pull data from anything, the data should be mocked."
 
+## Spec Kit Compatibility
+
+- **Target**: GitHub Spec Kit (clear acceptance tests, test data, and scope). This spec includes required Spec Kit elements: purpose, user stories, acceptance criteria, edge cases, mock-data guidance, assumptions, dependencies, and measurable success criteria.
+- **Acceptance Tests**: See “Acceptance Test Scripts” below — written as GIVEN/WHEN/THEN steps to map directly to Spec Kit automated or manual test cases.
+- **Mock Data**: Mock-data guidance is included to allow easy creation of fixtures for storybook or spec-kit demos.
+- **Out of Scope**: Authentication, backend persistence, third-party integrations (real push notifications, real calendar sync). These are intentionally mocked/session-scoped for demo purposes.
+
+## Acceptance Test Scripts (for Spec Kit)
+
+- Test 1 — Navigation: GIVEN the app loads, WHEN the user opens the Home page, THEN they can reach each page (Bible Reading, Prayer, Community, About Us) in ≤ 2 taps.
+- Test 2 — Reading minimal view: GIVEN a Bible passage, WHEN opened, THEN only passage text + reference are visible and selecting a verse exposes contextual actions.
+- Test 3 — Community member feed: GIVEN Member mock view, WHEN opening Community, THEN pinned items appear first and feed scrolls to show remaining mocked items without layout breaks.
+- Test 4 — Admin push: GIVEN Admin mock view, WHEN Admin pushes a reading, THEN Members see a prioritized feed item with preview and reference for the session.
+- Test 5 — Event RSVP: GIVEN an Event card, WHEN Member toggles RSVP, THEN RSVP state updates for the session and is visible in the event detail.
+- Test 6 — Empty states: GIVEN no mock items for a page, WHEN the page opens, THEN a clear empty-state message is shown and layout remains intact.
+
+Include these scripts as the Spec Kit test cases or convert to automated tests using your preferred test runner.
+
 ## Clarifications
 
 ### Session 2026-02-03
@@ -116,16 +134,65 @@ As a visitor, I want a prayer page with mocked prayer items organized into focus
 
 ### User Story 4 - Community (Priority: P4)
 
-As a visitor, I want a community page with mocked updates so I can see sample community activity.
+As a member of a faith group (or an admin), I want a lightweight social experience for our church or youth group so we can share Bible texts, prayers, and events, coordinate activities, and keep the group engaged.
 
-**Why this priority**: Community content rounds out the experience but can be delivered after core pages.
+**Why this priority**: A focused community hub turns static content into ongoing shared practice and enables admins to guide reading and prayer rhythms for the group.
 
-**Independent Test**: Can be tested by navigating to the community page and confirming mocked updates are displayed.
+**Independent Test**: Can be tested by navigating to the Community page, switching between Member and Admin mock views, viewing feeds, opening event details, and triggering mocked admin actions (send text, pin item, create event).
+
+**Roles**:
+
+- **Member**: views the community feed, RSVPs to events, reads pushed Bible texts, views and filters prayers, posts comments (session-mocked), and toggles notification preferences.
+- **Admin**: in addition to Member capabilities, can post group announcements, push Bible reading suggestions, create/edit/delete mocked events, pin/unpin items, and moderate (hide) items for the session.
+
+**Core Features (mocked)**:
+
+- Group feed: mixed stream of announcements, pushed Bible texts, prayers, and events.
+- Admin push: admins can send a mocked Bible text (title + short passage) that appears as a prioritized feed item for members.
+- Events: event cards with date/time, summary, RSVP mock, and a simple calendar integration view.
+- Focused prayer posts: shareable prayer items that open minimal detail views (text + metadata).
+- Pinned items: admins can pin important announcements or reading suggestions to the top of the feed.
+- Moderation controls: admins can hide or mark items as removed (session-only effect).
+- Member interactions: like, comment (session-only), RSVP, and save-to-collection (session-only).
+- Filtering & search: filter the feed by type (Announcements, Readings, Prayers, Events) and search by keywords.
+- Notification toggles: per-member mock preference to opt into push-like notices for admin pushes and events (mocked behavior).
 
 **Acceptance Scenarios**:
 
-1. **Given** the community page, **When** the visitor opens it, **Then** mocked community updates are displayed.
-2. **Given** the community page, **When** the visitor scrolls, **Then** additional mocked items are visible without layout breaks.
+1. **Given** the Community page, **When** a Member opens it, **Then** a mixed feed of mocked announcements, readings, prayers, and events is displayed with pinned items first.
+2. **Given** the Community page and a long feed, **When** the Member scrolls, **Then** additional mocked items are visible without layout breaks and without visual corruption.
+3. **Given** an Admin view, **When** the Admin pushes a Bible text, **Then** a prioritized feed item appears for Members during the session and shows the text preview and reference.
+4. **Given** an Event card, **When** a Member opens it, **Then** the event detail shows title, date/time, location (mocked), description, and an RSVP control that toggles RSVP state for the session.
+5. **Given** a prayer item in the feed, **When** a Member opens it, **Then** the prayer detail presents only text and metadata by default and contextual actions appear only when the Member selects the prayer item.
+6. **Given** a pinned announcement, **When** a Member opens the page, **Then** pinned items appear at the top and are visually distinguished.
+7. **Given** a comment or RSVP action, **When** a Member performs it, **Then** the action is mocked and visible only for the current session.
+8. **Given** an Admin who moderates an item, **When** the Admin hides the item, **Then** the item is removed from the feed for the session and a dismiss/undo affordance is shown to the Admin.
+9. **Given** feed filtering, **When** the Member selects a filter (e.g., Events), **Then** only items of that type are shown and the UI remains usable on small screens.
+10. **Given** empty community content, **When** the feed has no items, **Then** a clear empty-state message is shown (for example, “No group activity yet — admins can post an announcement”).
+
+**UX Notes**:
+
+- The Community feed MUST be mobile-first and thumb-friendly; primary actions (RSVP, comment, save) should be reachable without complex gestures.
+- Reading pushes from Admins should open the minimal reading view described in the Reading story: only passage text + reference by default; contextual actions appear on selection.
+- Admin controls should be accessible via an Admin toggle or contextual menu and must not appear for Members.
+- All community state (posts, RSVPs, comments, pinned/hidden status) is session-scoped and mocked; no backend persistence required for this feature.
+
+**Metrics / Success Criteria**:
+
+- Feed items render without layout shifts on mobile (visual sanity check).
+- Admin push items are visible and prioritized in the Member feed during the session.
+- Event RSVP toggles and pinned items function correctly in-session.
+
+**Edge Cases**:
+
+- Long event titles and descriptions must wrap and remain readable without horizontal scrolling.
+- Rapid admin actions (push, pin, remove) must leave the feed in a consistent state and not duplicate items.
+- When notifications are toggled off, the UI must not show notification banners for pushed items (mocked behavior).
+
+**Mock Data Guidance**:
+
+- Provide at least: 6 feed items (including 1 pinned announcement, 1 pushed reading, 2 prayers, 2 events) to test scrolling, filtering, and empty states.
+- Provide an Admin mock view and a Member mock view for acceptance testing.
 
 ---
 
@@ -171,6 +238,9 @@ As a visitor, I want an About Us page with mocked mission and team content so I 
 - **FR-007**: The About Us page MUST present mocked mission/values and team sections.
 - **FR-008**: The experience MUST be mobile-first with layouts usable on small screens.
 - **FR-009**: The visual presentation MUST be sleek and distinctive while remaining readable.
+- **FR-011**: The Community page MUST support role-based mock behaviors:
+  - Admins can post announcements, push Bible readings, create and edit mocked events, pin/unpin items, and moderate (hide) items for the session.
+  - Members can view the feed, RSVP to events, comment (session-only), like, save items to a session collection, and toggle notification preferences (mocked behavior).
 - **FR-010**: The Bible reading and Prayer detail views MUST be minimal: display only the text content and its reference/address by default. Any additional action UI (contextual action bar with share/comment/add actions) MUST appear only when the user explicitly selects verse(s) or prayer item(s). Session-only mocked persistence is acceptable for comments or temporary collections.
 
 ### Key Entities *(include if feature involves data)*
