@@ -145,8 +145,8 @@ As a visitor, I want an About Us page with mocked mission and team content so I 
 ### Edge Cases
 
 <!--
-  ACTION REQUIRED: The content in this section represents placeholders.
-  Fill them out with the right edge cases.
+  NOTE: The items in this section document known and anticipated edge cases.
+  Keep this list up to date as new behaviors or scenarios are discovered during design, implementation, and testing.
 -->
 
 - **Empty mocked content**: When any mocked content list (e.g., community posts, prayers, reading plans) is empty, the corresponding page MUST render a clear empty-state message (for example, “No items to show yet”) and MUST NOT show an error state, broken layout, or loading spinner.
