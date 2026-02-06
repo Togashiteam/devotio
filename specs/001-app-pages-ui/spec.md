@@ -185,8 +185,7 @@ As a visitor, I want an About Us page with mocked mission and team content so I 
 ## Success Criteria *(mandatory)*
 
 <!--
-  ACTION REQUIRED: Define measurable success criteria.
-  These must be technology-agnostic and measurable.
+  NOTE: The success criteria below are defined as measurable, technology-agnostic outcomes.
 -->
 
 ### Measurable Outcomes
