@@ -2,7 +2,7 @@
 
 **Purpose**: Validate specification completeness and quality before proceeding to planning
 **Created**: 2026-02-03
-**Feature**: [specs/001-app-pages-ui/spec.md](specs/001-app-pages-ui/spec.md)
+**Feature**: [specs/001-app-pages-ui/spec.md](../spec.md)
 
 ## Content Quality
 
