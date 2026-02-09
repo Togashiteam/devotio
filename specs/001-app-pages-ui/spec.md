@@ -229,28 +229,111 @@ As a visitor, I want an About Us page with mocked mission and team content so I 
 
 ### Functional Requirements
 
+#### Core App Structure
+
 - **FR-001**: The app MUST provide five pages: Home, Bible Reading, Prayer, Community, and About Us.
 - **FR-002**: The app MUST provide clear primary navigation that reaches any page in one action from Home.
 - **FR-003**: Each page MUST display mocked content without relying on external data sources.
-- **FR-004**: The Bible Reading page MUST support switching between at least two mocked passages.
-- **FR-005**: The Prayer page MUST show a list of mocked prayer items and a readable detail view.
-- **FR-006**: The Community page MUST show a list of mocked updates or events.
-- **FR-007**: The About Us page MUST present mocked mission/values and team sections.
-- **FR-008**: The experience MUST be mobile-first with layouts usable on small screens.
-- **FR-009**: The visual presentation MUST be sleek and distinctive while remaining readable.
-- **FR-011**: The Community page MUST support role-based mock behaviors:
-  - Admins can post announcements, push Bible readings, create and edit mocked events, pin/unpin items, and moderate (hide) items for the session.
-  - Members can view the feed, RSVP to events, comment (session-only), like, save items to a session collection, and toggle notification preferences (mocked behavior).
-- **FR-010**: The Bible reading and Prayer detail views MUST be minimal: display only the text content and its reference/address by default. Any additional action UI (contextual action bar with share/comment/add actions) MUST appear only when the user explicitly selects verse(s) or prayer item(s). Session-only mocked persistence is acceptable for comments or temporary collections.
+- **FR-004**: The experience MUST be mobile-first with layouts usable on small screens (≥360px width) without horizontal scrolling.
+- **FR-005**: The visual presentation MUST be sleek and distinctive while remaining readable.
+
+#### Home Page
+
+- **FR-006**: The Home page MUST display mocked content introducing the app purpose.
+- **FR-007**: The Home page MUST provide navigation controls to reach all other pages (Bible Reading, Prayer, Community, About Us).
+
+#### Bible Reading Page
+
+- **FR-008**: The Bible Reading page MUST support switching between at least two mocked passages.
+- **FR-009**: The Bible Reading page MUST display passage text with its reference/address and basic metadata.
+- **FR-010**: The Bible Reading page MUST support a full Bible reading mode with mocked content (≥2 books, ≥2 chapters per book, ≥2 verses per chapter).
+- **FR-011**: The Bible Reading page MUST allow verse selection and display a contextual action bar ONLY when one or more verses are selected.
+- **FR-012**: The contextual action bar for verses MUST provide mocked actions: share, add comment, add to prayer, add to favorite.
+- **FR-013**: The Bible Reading page MUST dismiss the contextual action bar when the user clears selection or navigates away.
+- **FR-014**: The Bible Reading page MUST support mocked session-scoped comments on verses with a view to display comments alongside their verses.
+- **FR-015**: The Bible Reading page MUST support sharing verses with their attached comments.
+- **FR-016**: The Bible Reading page MUST support mocked session-scoped favorites collection.
+- **FR-017**: Bible passage detail views MUST be minimal by default: only passage text and reference/address are visible; no persistent UI chrome.
+
+#### Prayer Page
+
+- **FR-018**: The Prayer page MUST display four sections: Prayers by Theme, My Prayers, World & Community Prayers, and Focus Prayer.
+- **FR-019**: Prayers by Theme MUST show a browsable list grouped by themes (e.g., Gratitude, Healing, Guidance) with links to view full theme lists.
+- **FR-020**: My Prayers MUST support creating, editing, and deleting user prayers with session-scoped mocked persistence.
+- **FR-021**: My Prayers MUST allow marking prayers as "answered" with an answered indicator that persists for the session.
+- **FR-022**: World & Community Prayers MUST display a combined feed of global and community-submitted mocked prayers separated into subsections with date/summary metadata.
+- **FR-023**: Focus Prayer MUST support activating a Do Not Disturb timed prayer session via two-thumb gesture (two-finger press) OR a dedicated UI control.
+- **FR-024**: Focus Prayer MUST display a configurable timer with visible countdown/indicator during an active focus session.
+- **FR-025**: Focus Prayer MUST suppress non-essential UI and notifications (mocked behavior) while active and restore normal controls when the timer ends or the user cancels.
+- **FR-026**: Prayer detail views MUST be minimal by default: only prayer text and metadata are visible.
+- **FR-027**: Prayer items MUST support selection with a contextual action bar (share, comment, add to collection) that appears ONLY when one or more items are selected.
+- **FR-028**: All prayer state (created prayers, answered marks, comments, focus timers) MUST be session-scoped and mocked; no backend persistence required.
+
+#### Community Page
+
+- **FR-029**: The Community page MUST support two roles: Member and Admin, with distinct mock behaviors.
+- **FR-030**: Members MUST be able to view the community feed, RSVP to events, read pushed Bible texts, view and filter prayers, post comments (session-mocked), and toggle notification preferences.
+- **FR-031**: Admins MUST be able to perform all Member actions PLUS post announcements, push Bible reading suggestions, create/edit/delete mocked events, pin/unpin items, and moderate (hide) items for the session.
+- **FR-032**: The Community feed MUST display a mixed stream of announcements, pushed Bible texts, prayers, and events with pinned items appearing first.
+- **FR-033**: Admin push (Bible text) MUST create a prioritized feed item for Members showing text preview and reference during the session.
+- **FR-034**: Event cards MUST display date/time, summary, location (mocked), description, and an RSVP control that toggles state for the session.
+- **FR-035**: Prayer posts in the Community feed MUST open minimal detail views (text + metadata) with contextual actions appearing only on selection.
+- **FR-036**: Admin controls (post, push, pin, moderate) MUST be accessible via an Admin toggle or contextual menu and MUST NOT appear for Members.
+- **FR-037**: The Community page MUST support filtering the feed by type (Announcements, Readings, Prayers, Events) and searching by keywords.
+- **FR-038**: Member interactions (like, comment, RSVP, save-to-collection) MUST be session-scoped and mocked.
+- **FR-039**: Notification toggles MUST allow Members to opt into mocked push-like notices for admin pushes and events.
+- **FR-040**: The Community feed MUST be mobile-first and thumb-friendly with primary actions reachable without complex gestures.
+- **FR-041**: All Community state (posts, RSVPs, comments, pinned/hidden status) MUST be session-scoped and mocked; no backend persistence required.
+
+#### About Us Page
+
+- **FR-042**: The About Us page MUST present mocked mission/values content.
+- **FR-043**: The About Us page MUST display mocked team profiles with name, role, and short bio.
+
+#### Cross-Cutting Requirements
+
+- **FR-044**: Empty state for any content list (community posts, prayers, reading plans) MUST render a clear message (e.g., "No items to show yet") without showing errors, broken layouts, or loading spinners.
+- **FR-045**: All text content MUST wrap within the viewport on narrow mobile screens and remain fully readable via vertical scrolling; horizontal scrolling MUST NOT be required.
+- **FR-046**: Rapid navigation between pages MUST keep the app responsive, render only the final selected page's content, and MUST NOT crash, freeze, or display visual corruption.
 
 ### Key Entities *(include if feature involves data)*
 
+#### Core Entities
+
 - **Page**: Represents a top-level section (Home, Bible Reading, Prayer, Community, About Us).
-- **Content Section**: A block of mocked content within a page (title, body text, optional media).
-- **Bible Passage**: Mocked scripture content with reference and passage text.
-- **Prayer Item**: Mocked prayer title and full text content.
-- **Community Update**: Mocked community item with title, summary, and date.
+- **User Role**: Either Member or Admin, affecting available actions on Community page.
+
+#### Bible Reading Entities
+
+- **Bible Passage**: Mocked scripture content with reference, passage text, book, chapter, and verse identifiers.
+- **Verse**: Individual verse within a passage, selectable for actions.
+- **Verse Comment**: User-created comment attached to one or more verses (session-scoped).
+- **Favorites Collection**: Session-scoped collection of saved verses.
+
+#### Prayer Entities
+
+- **Prayer Item**: Mocked or user-created prayer with title, full text, theme, and metadata (date, source).
+- **Prayer Theme**: Category grouping for prayers (e.g., Gratitude, Healing, Guidance).
+- **Answered Mark**: Boolean indicator showing whether a user prayer has been answered (session-scoped).
+- **Focus Session**: Timed Do Not Disturb prayer session with configurable duration and countdown indicator (session-scoped).
+
+#### Community Entities
+
+- **Community Feed Item**: Base type for announcements, pushed readings, prayers, and events displayed in the Community feed.
+- **Announcement**: Admin-posted message with title, body, and timestamp.
+- **Pushed Reading**: Bible text shared by Admin with title, short passage, and reference.
+- **Event**: Calendar item with title, date/time, location, description, and RSVP collection.
+- **RSVP**: Member's response to an event (session-scoped).
+- **Comment**: User-posted response to a feed item (session-scoped).
+- **Pin Status**: Boolean indicator showing whether an item is pinned to the top of the feed (session-scoped).
+- **Moderation Action**: Admin action to hide/remove an item from the feed (session-scoped).
+- **Notification Preference**: Per-member toggle for mocked push notices (session-scoped).
+- **Feed Filter**: Type-based filter (Announcements, Readings, Prayers, Events).
+
+#### About Us Entities
+
 - **Team Profile**: Mocked person profile with name, role, and short bio.
+- **Mission Statement**: Mocked mission and values content.
 
 ## Success Criteria *(mandatory)*
 
@@ -260,10 +343,59 @@ As a visitor, I want an About Us page with mocked mission and team content so I 
 
 ### Measurable Outcomes
 
+#### Core App & Navigation
+
 - **SC-001**: 90% of test users can reach any page from Home in ≤ 2 taps within 10 seconds.
-- **SC-002**: 90% of test users can locate the Bible Reading page and switch passages in under 30 seconds.
-- **SC-003**: The app renders all five pages correctly on screens 360px wide without horizontal scrolling.
-- **SC-004**: 90% of test users rate the design as “sleek and standout” on a post-test survey.
+- **SC-002**: The app renders all five pages correctly on screens 360px wide without horizontal scrolling.
+- **SC-003**: Navigation controls are visible and accessible within the thumb-friendly zone on mobile devices (bottom 60% of screen or persistent bottom nav).
+- **SC-004**: 90% of test users successfully return to Home from any page within 5 seconds.
+- **SC-005**: 90% of test users rate the design as "sleek and standout" on a post-test survey (4.5/5 or higher).
+
+#### Bible Reading Page
+
+- **SC-006**: 90% of test users can locate the Bible Reading page and switch passages in under 30 seconds.
+- **SC-007**: When viewing a passage, only passage text and reference are visible by default without scrolling (minimal view validated on 375px × 667px viewport).
+- **SC-008**: 85% of test users successfully select a verse and trigger the contextual action bar within 15 seconds.
+- **SC-009**: Contextual action bar appears within 200ms of verse selection.
+- **SC-010**: 80% of test users successfully add a comment to a verse and view the comment within 45 seconds.
+- **SC-011**: 85% of test users successfully add verses to favorites within 20 seconds.
+- **SC-012**: Sharing a verse with attached comments includes both verse text and comment text in the mocked share output.
+
+#### Prayer Page
+
+- **SC-013**: 90% of test users can identify and navigate to all four prayer sections (by Theme, My Prayers, World & Community, Focus) within 30 seconds.
+- **SC-014**: 85% of test users successfully create a new prayer and see it appear in My Prayers within 40 seconds.
+- **SC-015**: 80% of test users successfully mark a prayer as "answered" and observe the visual indicator within 20 seconds.
+- **SC-016**: 75% of test users successfully activate Focus Prayer mode (via two-thumb gesture or UI control) within 30 seconds.
+- **SC-017**: Focus mode countdown timer is visible and updates every second without lag or visual jitter.
+- **SC-018**: When Focus mode is active, non-essential UI elements (navigation, action bars) are hidden or minimized, verified by visual inspection.
+- **SC-019**: Prayer detail views display only text and metadata by default, with contextual actions appearing only when prayer is selected (validated on 360px viewport).
+
+#### Community Page
+
+- **SC-020**: 90% of test users viewing the Community feed can distinguish pinned items from regular items within 10 seconds (visual differentiation test).
+- **SC-021**: 85% of test users in Member role successfully RSVP to an event and see the RSVP state update within 25 seconds.
+- **SC-022**: 80% of test users in Admin role successfully push a Bible reading and verify it appears as a prioritized feed item within 40 seconds.
+- **SC-023**: 85% of test users successfully filter the Community feed by type (Events, Prayers, Announcements, Readings) within 20 seconds.
+- **SC-024**: The Community feed scrolls smoothly without layout shifts or visual jitter on 360px mobile viewport (validated via visual inspection or Lighthouse CLS < 0.1).
+- **SC-025**: 80% of test users can identify and use at least two member interactions (like, comment, save) within 35 seconds.
+- **SC-026**: Admin controls (post, pin, moderate) are not visible to Members (100% verified in role-based testing).
+- **SC-027**: When Community feed is empty, 90% of test users see and understand the empty-state message within 5 seconds.
+
+#### About Us Page
+
+- **SC-028**: 90% of test users can locate and read mission/values content within 20 seconds.
+- **SC-029**: 85% of test users can view at least one team profile with name, role, and bio within 25 seconds.
+
+#### Cross-Cutting UX & Performance
+
+- **SC-030**: All pages load and render initial content within 2.5 seconds on a simulated 3G mobile connection (Lighthouse LCP ≤ 2.5s).
+- **SC-031**: Primary interactions (tap, select, RSVP, navigate) respond within 200ms (Lighthouse INP ≤ 200ms).
+- **SC-032**: Long text content (event descriptions, prayer text, Bible passages) wraps correctly on 360px viewport without requiring horizontal scrolling (100% validated across all pages).
+- **SC-033**: Rapid navigation (5 page switches in 10 seconds) does not cause crashes, freezes, or visual corruption (100% pass rate in smoke tests).
+- **SC-034**: Empty states for all content lists render clear messages without errors or loading spinners (100% validated across all pages).
+- **SC-035**: The app meets WCAG 2.1 AA contrast requirements (4.5:1 for normal text, 3:1 for large text) across all pages (100% validated via automated accessibility audit).
+- **SC-036**: All interactive controls meet minimum touch target size of 44×44 CSS pixels (100% validated via automated accessibility audit).
 
 ## Assumptions
 
