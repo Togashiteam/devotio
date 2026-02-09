@@ -18,12 +18,9 @@
 - [x] Success criteria are measurable
 - [x] Success criteria are technology-agnostic (no implementation details)
 - [x] All acceptance scenarios are defined
-- [ ] Edge cases are identified
+- [x] Edge cases are identified
 - [x] Scope is clearly bounded
 - [x] Dependencies and assumptions identified
-
-Notes:
-- Edge cases updated in the main spec (wrap/empty-state/rapid navigation). These are now considered identified for Spec Kit purposes. Ensure mock fixtures include long titles and empty feeds when running tests.
 
 ## Feature Readiness
 
