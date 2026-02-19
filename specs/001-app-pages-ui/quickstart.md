@@ -27,8 +27,7 @@ npx create-next-app@14 . \
   --eslint \
   --app \
   --src-dir \
-  --import-alias "@/*" \
-  --no-experimental-app
+  --import-alias "@/*"
 ```
 
 > If the repo already has files, run `create-next-app` in a temporary folder and copy the generated config files (`next.config.ts`, `tsconfig.json`, `tailwind.config.ts`, `.eslintrc.json`, `package.json`).
@@ -54,15 +53,16 @@ npm install -D @playwright/test @axe-core/playwright
 ```ts
 import withPWA from '@ducanh2912/next-pwa';
 
-const nextConfig = withPWA({
-  dest: 'public',
-  disable: process.env.NODE_ENV === 'development',
-})({
+const nextConfig = {
   output: 'export',
   images: { unoptimized: true },
-});
+  pwa: {
+    dest: 'public',
+    disable: process.env.NODE_ENV === 'development',
+  },
+};
 
-export default nextConfig;
+export default withPWA(nextConfig);
 ```
 
 ---
