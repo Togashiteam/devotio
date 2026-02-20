@@ -27,8 +27,7 @@ npx create-next-app@14 . \
   --eslint \
   --app \
   --src-dir \
-  --import-alias "@/*" \
-  --no-experimental-app
+  --import-alias "@/*"
 ```
 
 > If the repo already has files, run `create-next-app` in a temporary folder and copy the generated config files (`next.config.ts`, `tsconfig.json`, `tailwind.config.ts`, `.eslintrc.json`, `package.json`).

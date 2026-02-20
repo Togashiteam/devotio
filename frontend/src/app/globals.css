@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base resets ─────────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    /* Smooth scrolling but respect reduced-motion preference */
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    /* Safe-area padding for notched devices */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    /* Prevent horizontal overflow at all viewports */
+    overflow-x: hidden;
+    /* iOS momentum scrolling */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ── Minimum touch target size (WCAG 2.5.5 / FR-004) ────────── */
+  button,
+  a,
+  [role='button'],
+  [role='link'],
+  label,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* ── Accessible focus indicator (WCAG 2.4.7) ────────────────── */
+  :focus-visible {
+    outline: 2px solid theme('colors.brand.accent');
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Suppress default outline only when focus-visible is supported */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* ── Typography defaults ─────────────────────────────────────── */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    line-height: 1.25;
+    word-break: break-word;
+  }
+
+  p,
+  li {
+    line-height: 1.6;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* No horizontal scroll on any element */
+  img,
+  video,
+  iframe,
+  embed,
+  object {
+    max-width: 100%;
+  }
+}
