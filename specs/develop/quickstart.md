@@ -53,16 +53,15 @@ npm install -D @playwright/test @axe-core/playwright
 ```ts
 import withPWA from '@ducanh2912/next-pwa';
 
-const nextConfig = {
+const nextConfig = withPWA({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
+})({
   output: 'export',
   images: { unoptimized: true },
-  pwa: {
-    dest: 'public',
-    disable: process.env.NODE_ENV === 'development',
-  },
-};
+});
 
-export default withPWA(nextConfig);
+export default nextConfig;
 ```
 
 ---
