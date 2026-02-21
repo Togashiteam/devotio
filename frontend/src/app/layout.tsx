@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import '@/app/globals.css';
+import { LayoutShell } from '@/components/navigation/LayoutShell';
 
 export const metadata: Metadata = {
   title: 'Devotio',
@@ -29,10 +30,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-brand text-white font-sans antialiased">
-        {/* BottomNav wired in Phase 2 T017/T018 */}
-        <main className="min-h-screen pb-[calc(4rem+env(safe-area-inset-bottom))]">
-          {children}
-        </main>
+        {/* Skip-to-content link for keyboard/screen-reader users (WCAG 2.4.1) */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-3 focus:py-2 focus:rounded-lg focus:bg-brand-accent focus:text-white focus:text-sm font-medium"
+        >
+          Skip to content
+        </a>
+        <LayoutShell>{children}</LayoutShell>
       </body>
     </html>
   );

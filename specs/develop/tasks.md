@@ -28,18 +28,18 @@
 
 **⚠️ CRITICAL**: No user story work begins before this phase is complete.
 
-- [ ] T009 Define shared TypeScript domain types from contracts in `src/types/bible.ts`
-- [ ] T010 [P] Define prayer domain types from contracts in `src/types/prayer.ts`
-- [ ] T011 [P] Define community domain types from contracts in `src/types/community.ts`
-- [ ] T012 [P] Define about domain types from contracts in `src/types/about.ts`
-- [ ] T013 Create JSON mock-data fixtures (passages/prayers/themes/feed/events/about) in `src/data/`
-- [ ] T014 Implement utility class merger helper in `src/lib/cn.ts`
-- [ ] T015 [P] Implement two-finger gesture utility in `src/lib/gesture.ts`
-- [ ] T016 Implement shared UI primitives (BottomSheet/Toast/EmptyState/PageTransition/Avatar) in `src/components/ui/`
-- [ ] T017 Implement persistent bottom navigation shell in `src/components/navigation/BottomNav.tsx`
-- [ ] T018 Wire root app layout with bottom nav and page transitions in `src/app/layout.tsx`
-- [ ] T019 Configure PWA manifest metadata and icons in `public/manifest.json`
-- [ ] T020 Add base accessibility and mobile defaults (focus-visible, touch targets, safe-area spacing) in `src/app/globals.css`
+- [X] T009 Define shared TypeScript domain types from contracts in `src/types/bible.ts`
+- [X] T010 [P] Define prayer domain types from contracts in `src/types/prayer.ts`
+- [X] T011 [P] Define community domain types from contracts in `src/types/community.ts`
+- [X] T012 [P] Define about domain types from contracts in `src/types/about.ts`
+- [X] T013 Create JSON mock-data fixtures (passages/prayers/themes/feed/events/about) in `src/data/`
+- [X] T014 Implement utility class merger helper in `src/lib/cn.ts`
+- [X] T015 [P] Implement two-finger gesture utility in `src/lib/gesture.ts`
+- [X] T016 Implement shared UI primitives (BottomSheet/Toast/EmptyState/PageTransition/Avatar) in `src/components/ui/`
+- [X] T017 Implement persistent bottom navigation shell in `src/components/navigation/BottomNav.tsx`
+- [X] T018 Wire root app layout with bottom nav and page transitions in `src/app/layout.tsx`
+- [X] T019 Configure PWA manifest metadata and icons in `public/manifest.json`
+- [X] T020 Add base accessibility and mobile defaults (focus-visible, touch targets, safe-area spacing) in `src/app/globals.css`
 
 **Checkpoint**: Foundation complete — all user stories can now be implemented independently.
 

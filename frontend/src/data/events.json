@@ -1,0 +1,32 @@
+{
+  "events": [
+    {
+      "id": "event-1",
+      "title": "Sunday Worship Service",
+      "datetime": "2026-02-23T10:00:00.000Z",
+      "location": "Main Sanctuary, 123 Faith Ave",
+      "description": "Join us for our weekly worship service with live music, teaching, and communion."
+    },
+    {
+      "id": "event-2",
+      "title": "Community Prayer Night",
+      "datetime": "2026-02-25T19:00:00.000Z",
+      "location": "Fellowship Hall, 123 Faith Ave",
+      "description": "A dedicated evening of prayer and intercession for our community and world. All are welcome."
+    },
+    {
+      "id": "event-3",
+      "title": "Youth Group Gathering",
+      "datetime": "2026-02-27T18:00:00.000Z",
+      "location": "Youth Center, 123 Faith Ave",
+      "description": "A fun and faith-filled evening for teens with games, small groups, and a short devotional."
+    },
+    {
+      "id": "event-4",
+      "title": "Women's Bible Study",
+      "datetime": "2026-03-01T09:00:00.000Z",
+      "location": "Room 204, 123 Faith Ave",
+      "description": "Weekly study through the book of Ruth. New participants always welcome. Coffee provided."
+    }
+  ]
+}

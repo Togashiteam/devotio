@@ -1,0 +1,52 @@
+{
+  "mission": {
+    "text": "Devotio exists to help people deepen their walk with God through daily engagement with Scripture, prayer, and community. We believe that faith grows best when nurtured consistently and shared openly. Our mission is to make the ancient practices of devotion accessible, beautiful, and alive for every believer."
+  },
+  "values": [
+    {
+      "id": "scripture",
+      "label": "Scripture",
+      "description": "We are rooted in the Word of God as our guide for life and faith."
+    },
+    {
+      "id": "community",
+      "label": "Community",
+      "description": "We believe life is better together, sharing burdens, joys, and the journey of faith."
+    },
+    {
+      "id": "prayer",
+      "label": "Prayer",
+      "description": "We are committed to a life of prayer, staying in constant conversation with God."
+    }
+  ],
+  "team": [
+    {
+      "id": "team-1",
+      "name": "Sarah Thompson",
+      "role": "Founder & Lead Pastor",
+      "bio": "Sarah has been in ministry for over 15 years, with a passion for connecting people to God through Scripture and community.",
+      "avatarUrl": "/avatars/team-1.png"
+    },
+    {
+      "id": "team-2",
+      "name": "James Okafor",
+      "role": "Director of Technology",
+      "bio": "James brings a decade of software engineering experience and a heart for using technology to advance the gospel.",
+      "avatarUrl": "/avatars/team-2.png"
+    },
+    {
+      "id": "team-3",
+      "name": "Maria Gonzalez",
+      "role": "Community & Outreach",
+      "bio": "Maria leads our community initiatives and is passionate about creating spaces where people can belong and grow.",
+      "avatarUrl": "/avatars/team-3.png"
+    },
+    {
+      "id": "team-4",
+      "name": "David Chen",
+      "role": "Worship & Creative Arts",
+      "bio": "David oversees our worship and creative direction, leading the team in crafting meaningful worship experiences.",
+      "avatarUrl": "/avatars/team-4.png"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "id": "feed-1",
+      "type": "announcement",
+      "isPinned": true,
+      "timestamp": "2026-02-20T08:00:00.000Z",
+      "authorRole": "admin",
+      "title": "Welcome to the Spring Series!",
+      "body": "We are excited to kick off our Spring Scripture Series starting this Sunday. Join us as we journey through the book of John together. See you at 10 AM!"
+    },
+    {
+      "id": "feed-2",
+      "type": "reading",
+      "isPinned": false,
+      "timestamp": "2026-02-20T09:30:00.000Z",
+      "authorRole": "admin",
+      "title": "Today's Passage: John 3:16–17",
+      "passagePreview": "For God so loved the world that he gave his one and only Son...",
+      "reference": "John 3:16–17",
+      "passageId": "john-3-16-17"
+    },
+    {
+      "id": "feed-3",
+      "type": "prayer",
+      "isPinned": false,
+      "timestamp": "2026-02-20T10:00:00.000Z",
+      "authorRole": "member",
+      "prayerItemId": "prayer-community-1",
+      "summary": "Lifting up our church family during challenging times."
+    },
+    {
+      "id": "feed-4",
+      "type": "prayer",
+      "isPinned": false,
+      "timestamp": "2026-02-19T14:00:00.000Z",
+      "authorRole": "member",
+      "prayerItemId": "prayer-world-1",
+      "summary": "Praying for peace in conflict regions around the world."
+    },
+    {
+      "id": "feed-5",
+      "type": "event",
+      "isPinned": false,
+      "timestamp": "2026-02-18T12:00:00.000Z",
+      "authorRole": "admin",
+      "title": "Sunday Worship Service",
+      "datetime": "2026-02-23T10:00:00.000Z",
+      "location": "Main Sanctuary, 123 Faith Ave",
+      "description": "Join us for our weekly worship service with live music, teaching, and communion."
+    },
+    {
+      "id": "feed-6",
+      "type": "event",
+      "isPinned": false,
+      "timestamp": "2026-02-17T15:00:00.000Z",
+      "authorRole": "admin",
+      "title": "Community Prayer Night",
+      "datetime": "2026-02-25T19:00:00.000Z",
+      "location": "Fellowship Hall, 123 Faith Ave",
+      "description": "A dedicated evening of prayer and intercession for our community and world. All are welcome."
+    }
+  ]
+}

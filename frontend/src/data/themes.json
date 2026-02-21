@@ -1,0 +1,24 @@
+{
+  "themes": [
+    {
+      "id": "gratitude",
+      "label": "Gratitude",
+      "description": "Prayers of thanksgiving for the blessings in your life."
+    },
+    {
+      "id": "healing",
+      "label": "Healing",
+      "description": "Prayers seeking restoration and healing for body, mind, and spirit."
+    },
+    {
+      "id": "guidance",
+      "label": "Guidance",
+      "description": "Prayers asking for wisdom and direction in life's decisions."
+    },
+    {
+      "id": "peace",
+      "label": "Peace",
+      "description": "Prayers for inner calm and peace amid life's storms."
+    }
+  ]
+}
