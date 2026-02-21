@@ -1,0 +1,80 @@
+{
+  "themed": [
+    {
+      "id": "prayer-gratitude-1",
+      "title": "A Heart of Thanksgiving",
+      "text": "Lord, I come before You with a grateful heart. Thank You for the gift of this day, for the breath in my lungs, and for Your unending love. Help me to always find reasons to be thankful, even in difficult seasons. May my life be a reflection of Your goodness. Amen.",
+      "themeId": "gratitude",
+      "source": "theme",
+      "date": "2026-02-20",
+      "summary": null
+    },
+    {
+      "id": "prayer-healing-1",
+      "title": "Prayer for Restoration",
+      "text": "Heavenly Father, I bring before You those who are hurting today — those struggling with illness, grief, and pain. You are the Great Physician, and nothing is beyond Your power to restore. I ask for Your healing touch, Your peace that surpasses understanding, and Your strength for each weary soul. Amen.",
+      "themeId": "healing",
+      "source": "theme",
+      "date": "2026-02-19",
+      "summary": null
+    },
+    {
+      "id": "prayer-guidance-1",
+      "title": "Prayer for Wisdom",
+      "text": "God of all wisdom, I stand at a crossroads and need Your direction. Open my eyes to see the path You have prepared for me. Grant me discernment to distinguish Your voice from the other voices in my life. Lead me in Your truth and teach me Your ways. Amen.",
+      "themeId": "guidance",
+      "source": "theme",
+      "date": "2026-02-18",
+      "summary": null
+    },
+    {
+      "id": "prayer-peace-1",
+      "title": "Peace in the Storm",
+      "text": "Prince of Peace, the waves around me are high and the winds are fierce. Still the storm within my heart as You stilled the sea. Replace my anxiety with trust, my fear with faith, and my restlessness with Your deep and abiding peace. Let me rest secure in the knowledge that You hold all things. Amen.",
+      "themeId": "peace",
+      "source": "theme",
+      "date": "2026-02-17",
+      "summary": null
+    }
+  ],
+  "world": [
+    {
+      "id": "prayer-world-1",
+      "title": "Prayer for Nations at War",
+      "text": "Lord of all nations, we lift up the regions of the world torn by conflict. Soften the hearts of leaders. Protect the innocent. Raise up peacemakers and give courage to those working for reconciliation. May Your kingdom of justice and peace come on earth as it is in heaven. Amen.",
+      "themeId": null,
+      "source": "world",
+      "date": "2026-02-20",
+      "summary": "Praying for peace in conflict regions around the world."
+    },
+    {
+      "id": "prayer-world-2",
+      "title": "Prayer for the Vulnerable",
+      "text": "Father, we remember today the hungry, the homeless, and the forgotten. Open our eyes to needs around us. Raise up generous hearts and just systems. May Your love be made tangible through the hands of those who serve. Amen.",
+      "themeId": null,
+      "source": "world",
+      "date": "2026-02-19",
+      "summary": "Interceding for those who are hungry and without shelter."
+    }
+  ],
+  "community": [
+    {
+      "id": "prayer-community-1",
+      "title": "For Our Church Family",
+      "text": "Lord, we bring before You the members of our community who are going through trials this week. Strengthen our bonds of fellowship. Help us to bear one another's burdens and to encourage each other in faith. May we be known by our love. Amen.",
+      "themeId": null,
+      "source": "community",
+      "date": "2026-02-20",
+      "summary": "Lifting up our church family during challenging times."
+    },
+    {
+      "id": "prayer-community-2",
+      "title": "Blessing for Sunday Gathering",
+      "text": "Lord, as we gather together this Sunday, pour out Your Spirit among us. May hearts be opened, faith be strengthened, and community be deepened. Thank You for every person You have placed in this family of faith. Amen.",
+      "themeId": null,
+      "source": "community",
+      "date": "2026-02-16",
+      "summary": "Praying for a blessed and Spirit-filled Sunday gathering."
+    }
+  ]
+}
