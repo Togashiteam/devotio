@@ -47,7 +47,7 @@ export function Toast({
     if (!isOpen || duration === 0) return;
     const timer = setTimeout(onClose, duration);
     return () => clearTimeout(timer);
-  }, [isOpen, duration, onClose]);
+  }, [isOpen, duration]);
 
   const Icon = VARIANT_ICONS[variant];
 
